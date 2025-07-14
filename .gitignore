@@ -1,0 +1,9 @@
+MonitorDatasetsPkl/
+Monitor/__pycache__/
+Monitor/results/
+Monitor/*.pdf
+Monitor/*.pkl
+Monitor/test_channel.sh
+Monitor/test_speed.sh
+Monitor/test_delay.sh
+Monitor/log-*
