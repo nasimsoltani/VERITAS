@@ -8,7 +8,7 @@ This code is for training and testing the Monitor component in VERITAS system.
 ## Code Structure
 - There are 6 `.py` files that collectively train the Monitor NN on the training set, test it on the test set, and extract output features.
 - There are 3 `.sh` files for running the `.py` files and perform training and test.
-- There are 3 `.ipynb` files in the `notebooks` folder for running the OOD detection algorithm and plotting results.
+- There are 3 `.ipynb` files for running the OOD detection algorithm and plotting results.
 
 ### Training the Testing the Monitor NN
 
@@ -74,8 +74,12 @@ python -u /home/ns38942/VERITAS/Monitor/main.py \
 ```
 
 ### Running the OOD detection algorithm
-After training and test for each channel parameter is done, OOD detection algorithm and plotting the results can be done through the scripts provided in `notebooks` directory.
-- To use these jupyter notebook scripts the path in the second cell needs to be changed according to your system.
+After training and test for each channel parameter is done, OOD detection algorithm and plotting the results can be done through the scripts provided the 3 `.ipynb` files:
+- `OOD_detection_and_plot_Channel_Profile.ipynb`
+- `OOD_detection_and_plot_Tx_Speed.ipynb`
+- `OOD_detection_and_plot_Delay_Spread.ipynb`
+ 
+To use these jupyter notebook scripts the path in the second cell needs to be changed according to your system.
 ```
 pred_pkl_path = '/home/ns38942/VERITAS/Monitor/results/preds_Channel_Profile.pkl'
 ```
