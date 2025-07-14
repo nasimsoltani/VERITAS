@@ -1,6 +1,7 @@
-MonitorDatasetsPkl/
+MonitorDatasetsPkl/*
+Monitor/.ipynb_checkpoints/
 Monitor/__pycache__/
-Monitor/results/
+Monitor/results/*
 Monitor/*.pdf
 Monitor/*.pkl
 Monitor/test_channel.sh
