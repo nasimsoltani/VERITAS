@@ -33,17 +33,6 @@ class TrainDataset(Dataset):
         negative_grid = random.sample(self.data_cache[negative_class], 1)[0]
         negative_grid = np.moveaxis(negative_grid, -1, 0)
 
-        # return shuffled version of anchor as the negative grid:
-#         negative_grid = X.reshape(1,X.shape[0]*X.shape[1]*X.shape[2])
-#         random.shuffle(negative_grid)
-#         negative_grid = negative_grid.reshape(X.shape)
-
-        # return noise as the negative grid:
-#         r1 = np.amax(X)
-#         r2 = np.amin(X)
-#         negative_grid = (r1-r2) * np.random.rand(X.shape[0],X.shape[1],X.shape[2]) + r2
-
-
         return X, positive_grid, negative_grid, y
 
 

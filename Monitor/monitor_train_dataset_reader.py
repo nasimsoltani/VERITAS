@@ -69,10 +69,7 @@ def pkl_reader(dataset_pickle_path, channel_param):
 			for SNR in SNR_range:
 				if channel_model in ['uniform','gaussian','shuffled','rayleigh']:
 					aux_type = channel_model
-					#if channel_model == 'uniform':
 					this_list = pkl_content['tdl_d'][speed][SNR]
-					#else:
-					#	this_list = pkl_content['tdl_d'][speed][SNR]
 				else:
 					aux_type = None
 					this_list = pkl_content[channel_model][speed][SNR]

@@ -29,11 +29,6 @@ def train_model(model, train_dl, val_dl, channel_param, save_path):
 	patience = 8 
 	lr_patience = 4
 
-	# do the model/optimizer/loss function initialization
-
-	# import timm
-	# from pytorch_metric_learning import losses
-
 	learning_rate = 1e-4
 	min_learning_rate = 1e-7 
 	
@@ -47,12 +42,8 @@ def train_model(model, train_dl, val_dl, channel_param, save_path):
 	model.train()
 	model.cuda()
 
-	# loss_func = torch.nn.CrossEntropyLoss()
 	loss_func = torch.jit.script(TripletLoss())
-	# loss_func = losses.ContrastiveLoss()
-	# loss_func = torch.jit.script(contrastive())
 
-	# loss_func = torch.nn.BCELoss()
 	optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, weight_decay=0.001)
 
 	model_path = os.path.join(save_path,'weights_' + channel_param +'.pt')
@@ -77,7 +68,6 @@ def train_model(model, train_dl, val_dl, channel_param, save_path):
 		for batch_cntr, (anchor_input, positive_input, negative_input, labels) in enumerate(train_dl):   # Second for loop: in each epoch, loop over batches
 
 			# Every data instance is an input + label pair
-			#         anchor_input, positive_input, negative_input, labels = data
 			anchor_input = anchor_input.float().cuda()
 			positive_input = positive_input.float().cuda()
 			negative_input = negative_input.float().cuda()
@@ -96,7 +86,6 @@ def train_model(model, train_dl, val_dl, channel_param, save_path):
 			# compute loss and do the backward path
 			# triplet loss
 			loss = loss_func(anchor_outputs, positive_outputs, negative_outputs)
-			# loss = loss_func(anchor_outputs, negative_outputs, labels)
 			loss.backward()
 			# Adjust learning weights
 			optimizer.step()
@@ -108,7 +97,6 @@ def train_model(model, train_dl, val_dl, channel_param, save_path):
 			negative_outputs = model(negative_input)
 			# triplet loss:
 			loss = loss_func(anchor_outputs, positive_outputs, negative_outputs)
-			#         loss = loss_func(anchor_outputs, negative_outputs, labels)
 			# compute batch accuracy, and add it to all_batches_acc:
 			all_batches_loss += loss.item()
 
