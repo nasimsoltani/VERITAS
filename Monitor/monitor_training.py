@@ -34,11 +34,7 @@ def train_model(model, train_dl, val_dl, channel_param, save_path):
 	
 	if channel_param == 'Channel_Profile':
 		min_learning_rate = 1e-4
-	"""elif channel_param == 'Tx_Speed':
-		min_learning_rate = 1e-7 
-	elif channel_param == 'Delay_Spread':
-		min_learning_rate = 1e-7 """
-
+	
 	model.train()
 	model.cuda()
 
