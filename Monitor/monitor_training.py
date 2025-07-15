@@ -186,7 +186,7 @@ def train_model(model, train_dl, val_dl, channel_param, save_path):
 
 	loss_dict = {'train_loss':train_loss_list, 'val_loss':val_loss_list}
 
-	with open('loss_' + channel_param +'.pkl','wb') as handle:
+	with open(os.path.join(save_path,'loss_' + channel_param +'.pkl'),'wb') as handle:
 		pickle.dump(loss_dict,handle)
 
 
