@@ -2,7 +2,7 @@
 This code is for training and testing the Monitor component in VERITAS system.
 
 ## Downloadables
-- Dataset pickles: Download dataset files [here](https://utexas-my.sharepoint.com/:f:/g/personal/ns38942_eid_utexas_edu/EhXQ1NEipmdFtSx-ptydVmoBJ3md3aUkLzB_tCnKu9Xb9w?e=F79xjt).
+- Dataset pickles: Download dataset files [here](https://doi.org/10.18738/T8/XZLCUV).
 - Trained models: Download trained weights [here](https://utexas-my.sharepoint.com/:f:/g/personal/ns38942_eid_utexas_edu/EjKqeyTTgYhLu1VFJCrpynUBQdqd7-Z6ybUochsQ8eAo0A?e=SVeKNH).
 
 ## Code Structure
